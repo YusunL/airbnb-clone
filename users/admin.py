@@ -12,4 +12,19 @@ class CustomUserAdmin(UserAdmin):
 
     """ Custom User Admin """
 
-    pass
+    fieldsets = UserAdmin.fieldsets + (
+        (
+            "Custom Profile",
+            {
+                "fields": (
+                    "avatar",
+                    "gender",
+                    "bio",
+                    "birthdate",
+                    "language",
+                    "currency",
+                    "superhost",
+                )
+            },
+        ),
+    )
